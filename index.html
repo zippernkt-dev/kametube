@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>KameTube</title>
+
+<style>
+body{
+background:#111;
+color:white;
+font-family:Arial;
+padding:20px;
+}
+
+video{
+width:400px;
+border-radius:10px;
+}
+
+.card{
+background:#222;
+padding:15px;
+margin-bottom:20px;
+border-radius:15px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>KameTube</h1>
+
+<div class="card">
+
+<h2>テスト動画</h2>
+
+<video controls>
+<source src="https://www.w3schools.com/html/mov_bbb.mp4">
+</video>
+
+<br><br>
+
+<button onclick="like()">👍 高評価</button>
+
+<p id="likes">0</p>
+
+<input id="commentInput" placeholder="コメント">
+
+<button onclick="comment()">
+送信
+</button>
+
+<div id="comments"></div>
+
+</div>
+
+<script>
+let likes = 0
+
+function like(){
+likes++
+document.getElementById("likes").innerText = likes
+}
+
+function comment(){
+const text =
+document.getElementById("commentInput").value
+
+const div =
+document.createElement("div")
+
+div.innerText = text
+
+document.getElementById("comments")
+.appendChild(div)
+}
+</script>
+
+</body>
+</html>
